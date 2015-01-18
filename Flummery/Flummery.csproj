@@ -245,6 +245,12 @@
       <DependentUpon>pnlOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\Updater.cs" />
+    <Compile Include="widgetStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="widgetStructure.Designer.cs">
+      <DependentUpon>widgetStructure.cs</DependentUpon>
+    </Compile>
     <Compile Include="widgetTransform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pnlOverview.resx">
       <DependentUpon>pnlOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="widgetStructure.resx">
+      <DependentUpon>widgetStructure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="widgetTransform.resx">
       <DependentUpon>widgetTransform.cs</DependentUpon>

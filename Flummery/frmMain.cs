@@ -37,14 +37,22 @@ namespace Flummery
             var overview = new pnlOverview();
             var viewport = new pnlViewport();
             var materials = new pnlMaterialList();
-            var settings = new widgetTransform();
+
+            var rightContainer = new DockContent();
+
+            var transform = new widgetTransform();
+            var structure = new widgetStructure();
 
             viewport.Show(dockPanel, DockState.Document);
             overview.Show(dockPanel, DockState.DockLeft);
-            settings.Show(dockPanel, DockState.DockRight);
+
+            rightContainer.Show(dockPanel, DockState.DockRight);
+            transform.Show(rightContainer.Pane, DockAlignment.Top, 0.5);
+            structure.Show(rightContainer.Pane, DockAlignment.Bottom, 1.0);
+
             materials.Show(dockPanel, DockState.DockBottom);
 
-            dockPanel.DockRightPortion = settings.DefaultWidth;
+            dockPanel.DockRightPortion = transform.DefaultWidth;
 
             var extensions = new List<string>(GL.GetString(StringName.Extensions).Split(' '));
             this.Text += " v" + Flummery.Version;
@@ -53,7 +61,8 @@ namespace Flummery
             viewport.RegisterEventHandlers();
             overview.RegisterEventHandlers();
             materials.RegisterEventHandlers();
-            settings.RegisterEventHandlers();
+            transform.RegisterEventHandlers();
+            structure.RegisterEventHandlers();
 
             ToxicRagers.Helpers.Logger.ResetLog();
 
@@ -386,7 +395,7 @@ namespace Flummery
                         scene.Reset();
 
                         string assetFolder = Path.GetDirectoryName(ofdBrowse.FileName) + "\\";
-                        var vehicle = (Model)scene.Add(scene.Content.Load<Model, CNTImporter>(Path.GetFileName(ofdBrowse.FileName), assetFolder));
+                        Model vehicle = (Model)scene.Add(scene.Content.Load<Model, CNTImporter>(Path.GetFileName(ofdBrowse.FileName), assetFolder));
 
                         // Load supporting documents
                         if (File.Exists(assetFolder + "setup.lol")) { vehicle.SupportingDocuments["Setup"] = ToxicRagers.CarmageddonReincarnation.Formats.Setup.Load(assetFolder + "setup.lol"); }
@@ -410,6 +419,11 @@ namespace Flummery
 
                                 scene.Entities.Add(entity);
                             }
+                        }
+
+                        if (vehicle.SupportingDocuments.ContainsKey("Structure"))
+                        {
+                            
                         }
                     }
                     break;
