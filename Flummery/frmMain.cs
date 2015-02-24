@@ -246,6 +246,36 @@ namespace Flummery
                 case "TXT files (C1 Car)":
                     processAll(mi.Text);
                     break;
+
+                case "IWANTTOFIDDLE":
+                    if (MessageBox.Show(string.Format("This will decrypt all encrypted txt files under\r\n{0}\r\nAre you sure?", Properties.Settings.Default.PathCarmageddon1), "Totes sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        if (Directory.Exists(Properties.Settings.Default.PathCarmageddon1))
+                        {
+                            int success = 0;
+
+                            ToxicRagers.Helpers.IO.LoopDirectoriesIn(Properties.Settings.Default.PathCarmageddon1, (d) =>
+                            {
+                                foreach (FileInfo fi in d.GetFiles("*.txt"))
+                                {
+                                    var file = new ToxicRagers.Carmageddon.Helpers.DocumentParser(fi.FullName);
+
+                                    if (file.Fiddled)
+                                    {
+                                        File.WriteAllText(fi.FullName, file.ToString());
+                                        success++;
+                                    }
+
+                                    tsslProgress.Text = string.Format("[{0}] {1}", success, fi.FullName.Replace(Properties.Settings.Default.PathCarmageddon1, ""));
+                                    Application.DoEvents();
+                                }
+                            }
+                            );
+
+                            tsslProgress.Text = string.Format("Done fiddling");
+                        }
+                    }
+                    break;
             }
         }
 
