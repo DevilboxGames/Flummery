@@ -126,6 +126,8 @@
             this.tsmiToolsGeneralProcessAllTXTFilesC1Car = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiToolsGeneralProcessAllXT2Files = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiToolsGeneralProcessAllZADFiles = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiToolsCarmageddon = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiToolsCarmageddonIWANTTOFIDDLE = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiToolsCarmageddon2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiToolsCarmageddon2ConvertActorsToEntities = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiToolsCarmageddon2ScaleForCarmageddonReincarnation = new System.Windows.Forms.ToolStripMenuItem();
@@ -136,8 +138,7 @@
             this.tmsiToolsTDR2000RemoveLODFromVehicle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelpAboutFlummery = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiToolsCarmageddon = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiToolsCarmageddonIWANTTOFIDDLE = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiToolsCarmageddonCrushGenerator = new System.Windows.Forms.ToolStripMenuItem();
             this.ssStatus.SuspendLayout();
             this.menu.SuspendLayout();
             this.SuspendLayout();
@@ -822,6 +823,22 @@
             this.tsmiToolsGeneralProcessAllZADFiles.Text = "ZAD files";
             this.tsmiToolsGeneralProcessAllZADFiles.Click += new System.EventHandler(this.menuCarmageddonReincarnationClick);
             // 
+            // tsmiToolsCarmageddon
+            // 
+            this.tsmiToolsCarmageddon.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiToolsCarmageddonIWANTTOFIDDLE,
+            this.tsmiToolsCarmageddonCrushGenerator});
+            this.tsmiToolsCarmageddon.Name = "tsmiToolsCarmageddon";
+            this.tsmiToolsCarmageddon.Size = new System.Drawing.Size(226, 22);
+            this.tsmiToolsCarmageddon.Text = "Carmageddon";
+            // 
+            // tsmiToolsCarmageddonIWANTTOFIDDLE
+            // 
+            this.tsmiToolsCarmageddonIWANTTOFIDDLE.Name = "tsmiToolsCarmageddonIWANTTOFIDDLE";
+            this.tsmiToolsCarmageddonIWANTTOFIDDLE.Size = new System.Drawing.Size(165, 22);
+            this.tsmiToolsCarmageddonIWANTTOFIDDLE.Text = "IWANTTOFIDDLE";
+            this.tsmiToolsCarmageddonIWANTTOFIDDLE.Click += new System.EventHandler(this.menuCarmageddonClick);
+            // 
             // tsmiToolsCarmageddon2
             // 
             this.tsmiToolsCarmageddon2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -898,20 +915,12 @@
             this.tsmiHelpAboutFlummery.Text = "About Flummery";
             this.tsmiHelpAboutFlummery.Click += new System.EventHandler(this.menuClick);
             // 
-            // tsmiToolsCarmageddon
+            // tsmiToolsCarmageddonCrushGenerator
             // 
-            this.tsmiToolsCarmageddon.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiToolsCarmageddonIWANTTOFIDDLE});
-            this.tsmiToolsCarmageddon.Name = "tsmiToolsCarmageddon";
-            this.tsmiToolsCarmageddon.Size = new System.Drawing.Size(226, 22);
-            this.tsmiToolsCarmageddon.Text = "Carmageddon";
-            // 
-            // tsmiToolsCarmageddonIWANTTOFIDDLE
-            // 
-            this.tsmiToolsCarmageddonIWANTTOFIDDLE.Name = "tsmiToolsCarmageddonIWANTTOFIDDLE";
-            this.tsmiToolsCarmageddonIWANTTOFIDDLE.Size = new System.Drawing.Size(165, 22);
-            this.tsmiToolsCarmageddonIWANTTOFIDDLE.Text = "IWANTTOFIDDLE";
-            this.tsmiToolsCarmageddonIWANTTOFIDDLE.Click += new System.EventHandler(this.menuCarmageddonClick);
+            this.tsmiToolsCarmageddonCrushGenerator.Name = "tsmiToolsCarmageddonCrushGenerator";
+            this.tsmiToolsCarmageddonCrushGenerator.Size = new System.Drawing.Size(165, 22);
+            this.tsmiToolsCarmageddonCrushGenerator.Text = "Crush Generator";
+            this.tsmiToolsCarmageddonCrushGenerator.Click += new System.EventHandler(this.menuCarmageddonClick);
             // 
             // frmMain
             // 
@@ -1043,6 +1052,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiToolsCarmageddonReincarnationBulkUnZAD;
         private System.Windows.Forms.ToolStripMenuItem tsmiToolsCarmageddon;
         private System.Windows.Forms.ToolStripMenuItem tsmiToolsCarmageddonIWANTTOFIDDLE;
+        private System.Windows.Forms.ToolStripMenuItem tsmiToolsCarmageddonCrushGenerator;
 
         //private CustomGLControl glcViewport;
 

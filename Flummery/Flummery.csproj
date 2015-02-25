@@ -126,6 +126,12 @@
     <Compile Include="frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCarmageddonCrushGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCarmageddonCrushGenerator.Designer.cs">
+      <DependentUpon>frmCarmageddonCrushGenerator.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMaterialEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +277,9 @@
     <Compile Include="Stripper\Stripper.cs" />
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCarmageddonCrushGenerator.resx">
+      <DependentUpon>frmCarmageddonCrushGenerator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
